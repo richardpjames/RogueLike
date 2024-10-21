@@ -33,6 +33,8 @@ Game::Game(const char* title, int width, int height, bool fullScreen)
 		{
 			// Set the draw colour to cornflower blue
 			SDL_SetRenderDrawColor(renderer, 100, 149, 237, 255);
+			// Create the player
+			player = new Player(0, 0, "assets/rogues.png", 0, 32, 32, 32, renderer);
 		}
 	}
 	// If SDL does not intialise
@@ -50,6 +52,8 @@ Game::~Game()
 	SDL_DestroyRenderer(renderer);
 	// Quit SDL
 	SDL_Quit();
+	// Delete the player
+	delete player;
 	// Print to debug
 	fmt::print("SDL Cleaned\n");
 }
@@ -76,15 +80,19 @@ void Game::update()
 	// Calculate delta time - first get the current ticks
 	uint32_t tickTime = SDL_GetTicks();
 	// Work out the difference since the last ticks
-	deltaTime = tickTime - lastTickTime;
+	deltaTime = (tickTime - lastTickTime) / TICKS_PER_SECOND;
 	// Hold the last ticks for next time
 	lastTickTime = tickTime;
+	// Update the player
+	player->update(deltaTime);
 }
 
 void Game::render()
 {
 	// Clear the screen
 	SDL_RenderClear(renderer);
+	// Render the player
+	player->render(renderer);
 	// Present the screen
 	SDL_RenderPresent(renderer);
 }

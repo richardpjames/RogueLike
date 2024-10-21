@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include <fmt/core.h>
+#include "Player.hpp"
 
 class Game {
 
@@ -17,5 +18,7 @@ private:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	uint32_t lastTickTime = 0;
-	uint32_t deltaTime = 0;
+	double deltaTime = 0;
+	Player* player = nullptr;
+	const double TICKS_PER_SECOND = 1000;
 };
