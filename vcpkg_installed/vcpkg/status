@@ -1,0 +1,31 @@
+Package: vcpkg-cmake-config
+Version: 2024-05-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 9f4b2e0f1f411fcb95cfab668b06a1ae33161c81dfa095fad21a9ea44ee16edf
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2024-04-18
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 507e81625eb918abdb91df3092729c7828e27af603940d3a9c4194320fe57af4
+Status: install ok installed
+
+Package: raylib
+Version: 5.0
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d21cb0165713294c228d8f3f8a8f14bc86c235802492091f0e864557b9b749cc
+Description: A simple and easy-to-use library to enjoy videogames programming
+Default-Features: use-audio
+Status: install ok installed
+
+Package: raylib
+Feature: use-audio
+Architecture: x64-windows
+Multi-Arch: same
+Description: Build raylib with audio module
+Status: install ok installed
+
