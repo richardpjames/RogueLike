@@ -28,7 +28,7 @@ Player::~Player()
 	SDL_DestroyTexture(playerTexture);
 }
 
-void Player::update(float deltaTime)
+void Player::update(double deltaTime)
 {
 	// Move across the screen in the x and y direction
 	xpos += 100 * deltaTime;

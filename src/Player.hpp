@@ -6,7 +6,7 @@ class Player : public GameObject {
 public: 
 	Player(float xpos, float ypos, const char* filePath, int texX, int texY, int texWidth, int texHeight, SDL_Renderer* renderer);
 	~Player();
-	void update(float deltaTime);
+	void update(double deltaTime);
 	void render(SDL_Renderer* renderer);
 	// Additional variables required for holding texture/sprite information
 	SDL_Rect* srcRect = nullptr;

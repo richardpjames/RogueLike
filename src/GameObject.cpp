@@ -8,7 +8,7 @@ GameObject::GameObject(float xpos, float ypos)
 }
 
 // The basic GameObject update simply returns - this will be overridden
-void GameObject::update(float deltaTime)
+void GameObject::update(double deltaTime)
 {
 	return;
 }
