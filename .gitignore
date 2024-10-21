@@ -364,3 +364,5 @@ FodyWeavers.xsd
 
 # VCPKG installed Packages
 vcpkg_installed
+/CMakeFiles
+CMakeCache.txt
