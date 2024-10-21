@@ -72,7 +72,14 @@ void Game::handleEvents()
 }
 
 void Game::update()
-{}
+{
+	// Calculate delta time - first get the current ticks
+	uint32_t tickTime = SDL_GetTicks();
+	// Work out the difference since the last ticks
+	deltaTime = tickTime - lastTickTime;
+	// Hold the last ticks for next time
+	lastTickTime = tickTime;
+}
 
 void Game::render()
 {

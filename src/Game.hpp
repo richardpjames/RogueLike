@@ -16,5 +16,6 @@ private:
 	bool isRunning = false;
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
-
+	uint32_t lastTickTime = 0;
+	uint32_t deltaTime = 0;
 };
