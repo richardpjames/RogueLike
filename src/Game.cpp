@@ -1,4 +1,8 @@
 #include "Game.hpp"
+#include "Sprite.hpp"
+
+// Initialise to null for static variable
+SDL_Renderer* Game::renderer = nullptr;
 
 Game::Game(const char* title, int width, int height, bool fullScreen)
 {
@@ -33,8 +37,10 @@ Game::Game(const char* title, int width, int height, bool fullScreen)
 		{
 			// Set the draw colour to cornflower blue
 			SDL_SetRenderDrawColor(renderer, 100, 149, 237, 255);
+			// This shouldn't be deleted here (will go as part of the player)
+			Sprite* playerSprite = new Sprite("assets/rogues.png", 0, 32, 32, 32);
 			// Create the player
-			player = new Player(0, 0, "assets/rogues.png", 0, 32, 32, 32, renderer);
+			player = new Player(0, 0, playerSprite);
 		}
 	}
 	// If SDL does not intialise
@@ -92,7 +98,7 @@ void Game::render()
 	// Clear the screen
 	SDL_RenderClear(renderer);
 	// Render the player
-	player->render(renderer);
+	player->render();
 	// Present the screen
 	SDL_RenderPresent(renderer);
 }

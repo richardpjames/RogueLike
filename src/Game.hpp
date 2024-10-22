@@ -12,11 +12,11 @@ public:
 	void update();
 	void render();
 	bool running();
+	static SDL_Renderer* renderer;
 
 private:
 	bool isRunning = false;
 	SDL_Window* window = nullptr;
-	SDL_Renderer* renderer = nullptr;
 	uint32_t lastTickTime = 0;
 	double deltaTime = 0;
 	Player* player = nullptr;

@@ -12,7 +12,7 @@ endif()
 project ("RogueLike")
 
 # Add source to this project's executable.
-add_executable (RogueLike "src/RogueLike.cpp" "src/Game.cpp" "src/TextureManager.cpp" "src/Player.cpp" "src/GameObject.cpp")
+add_executable (RogueLike "src/RogueLike.cpp" "src/Game.cpp" "src/TextureManager.cpp" "src/Player.cpp" "src/GameObject.cpp" "src/Sprite.cpp")
 
 # Ensure that the SDL2 package is installed
 find_package(SDL2 CONFIG REQUIRED)

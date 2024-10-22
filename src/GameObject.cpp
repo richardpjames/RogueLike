@@ -14,7 +14,7 @@ void GameObject::update(double deltaTime)
 }
 
 // The basic GameObject render simply returns - this will be overridden
-void GameObject::render(SDL_Renderer* renderer)
+void GameObject::render()
 {
 	return;
 }

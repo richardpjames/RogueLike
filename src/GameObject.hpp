@@ -6,7 +6,7 @@ class GameObject {
 public: 
 	GameObject(float xpos, float ypos);
 	void update(double deltaTime);
-	void render(SDL_Renderer* renderer);
+	void render();
 	float xpos = 0;
 	float ypos = 0;
 };
